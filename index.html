@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>projeto 13</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+
+    <style>
+
+body {
+            transition: background-color 0.5s;
+             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+
+        table, td, th {  
+  border: 1px solid #000000;
+}
+
+table {
+  border-collapse: collapse;
+  position: absolute;
+    top: 50%;
+    right: 20%;
+    margin-top: -250px;
+    margin-right: -250px;
+}
+
+.form{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -600px;
+}
+
+th, td {
+  padding: 15px;
+}
+
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  background: #003366;
+  border-radius: 999px;
+  box-shadow: #003366 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF; 
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+    </style>
+</head>
+<body>
+    <form class="form">
+        
+    <h1> Idade </h1>
+    
+        <label for="n" style = "font-size: large;">Qual é a sua idade?:</label><br>
+        <input type="number" id="n"   oninput="this.value|=0" required>
+    </br>
+</br>
+
+    <button type="button" style="font-size: medium ;" onclick="idade()">Onde me encaixo?</button>
+    </form>
+    
+    <table align = right id = "table" style = "display: none;">
+       
+        <tr>
+         <td><b>Idade</b></td>
+         <td><b>Categoria</b></td>
+        </tr>
+        <tr>
+            <td>Até aos 2 anos</td>
+            <td>Bebé</td>
+        </tr>
+        <tr>
+            <td>Dos 3 aos 11 anos</td>
+            <td>Criança</td>
+        </tr>
+        <tr>
+            <td>Dos 12 aos 16 anos</td>
+            <td>Adolescente</td>
+        </tr>
+        <tr>
+            <td>17 anos</td>
+            <td>Jovem adulto</td>
+        </tr>
+        <tr>
+            <td>Dos 18 aos 49 anos</td>
+            <td>Adulto</td>
+        </tr>
+        <tr>
+            <td>Dos 50 aos 65 anos</td>
+            <td>Adulto de meia idade</td>
+        </tr>         
+        <tr>
+            <td>Mais de 65 anos</td>
+            <td>Idoso</td>
+        </tr>       
+        <tr>
+            <td>Mais de 100 anos</td>
+            <td>Lendário</td>
+        </tr>  
+        <tr>
+            <td>Mais de 130 anos</td>
+            <td>Imortal</td>
+        </tr>       
+       
+     </table>
+
+     <h1 align = "center" id = "bebe" style = "display: none;">Ohh! que bebé tão fofo!</h1>
+     <h1 align = "center" id = "crianca" style = "display: none;">És uma criança</h1>
+     <h1 align = "center" id = "adolescente" style = "display: none;">És adolescente</h1>
+     <h1 align = "center" id = "jovem" style = "display: none;">Já és um jovem adulto</h1>
+     <h1 align = "center" id = "adulto" style = "display: none;">As responsabilidades chegaram, já és adulto!</h1>
+     <h1 align = "center" id = "meia" style = "display: none;">És um adulto de meia-idade</h1>
+     <h1 align = "center" id = "idoso" style = "display: none;">Que velho fofo!</h1>
+     <h1 align = "center" id = "lendario" style = "display: none;">OMG ÉS LENDÁRIO</h1>
+     <h1 align = "center" id = "imortal" style = "display: none;">Vives há mais tempo que a rainha Elisabete? És imortal de certeza</h1>
+
+
+     <img id = imbebe style = "display: none;" src="./imagens/imbebe.png">
+    <audio id = musicabebe src ="./musica/musicabebe.mp3"></audio>
+
+     <img id = imcrianca style = "display: none;" width="400px" src="./imagens/imcrianca.png">
+     <audio id = musicacrianca src ="./musica/musicacrianca.mp3"></audio>
+
+     <img id = imadolescente style = "display: none;" src="./imagens/imadolescente.png">
+     <audio id = musicaadolescente src ="./musica/musicaadolescente.mp3"></audio>
+
+     <img id = imjovem style = "display: none;" src="./imagens/imjovem.png">
+     <audio id = musicajovem src ="./musica/musicajovem.mp3"></audio>
+
+     <img id = imadulto style = "display: none;" src="./imagens/imadulto.png">
+     <audio id = musicaadulto src ="./musica/musicaadulto.mp3"></audio>
+
+     <img id = immeia style = "display: none;" src="./imagens/immeia.png">
+     <audio id = musicameia src ="./musica/meia.mp3"></audio>
+
+    <img id = imidoso style = "display: none;" src="./imagens/imidoso.png">
+    <audio id = musicaidoso src ="./musica/musicaidoso.mp3"></audio>
+
+    <img id = imlendario style = "display: none;" src="./imagens/imlendario.png">
+    <audio id = musicalendario src ="./musica/musicalendario.mp3"></audio>
+
+    <img id = imimortal style = "display: none;" src="./imagens/imimortal.png">
+    <audio id = musicaimortal src ="./musica/musicaimortal.mp3"></audio>
+
+        
+     <script type= "text/javascript">
+
+
+         function idade (){
+            
+
+
+            let n = parseInt(document.getElementById("n").value)
+
+            const musicabebe = document.getElementById("musicabebe");
+            const musicacrianca = document.getElementById("musicacrianca");
+            const musicaadolescente = document.getElementById("musicaadolescente");
+            const musicajovem = document.getElementById("musicajovem");
+            const musicaadulto = document.getElementById("musicaadulto");
+            const musicameia = document.getElementById("musicameia");
+            const musicaidoso = document.getElementById("musicaidoso");
+            const musicalendario = document.getElementById("musicalendario");
+            const musicaimortal = document.getElementById("musicaimortal");
+
+
+            if (isNaN(n)){
+                alert("Erro: tens de escrever a tua idade!")
+                return;
+            }
+
+            document.getElementById("table").style.display = "block";
+            
+            if (n >= 0 && n <= 2){
+                document.body.style.backgroundColor = "#ffe882";
+
+                document.getElementById("bebe").style.display = "block";
+                document.getElementById("imbebe").style.display = "block";
+                musicabebe.play();
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+
+        }
+
+        else {
+            if (n> 2  && n < 12){
+                document.body.style.backgroundColor = "#8fdbff";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "block";
+                document.getElementById("imcrianca").style.display = "block";
+                musicacrianca.play();
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+            }
+            
+            if (n>= 12  && n<= 16){
+                document.body.style.backgroundColor = "#ffc58f";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "block";
+                document.getElementById("imadolescente").style.display = "block";
+                musicaadolescente.play();
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+
+            }
+
+            if (n> 16 && n< 18){
+                document.body.style.backgroundColor = "#988fff";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "block";
+                document.getElementById("imjovem").style.display = "block";
+                musicajovem.play();
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+            }
+
+            if(n>= 18 && n< 50){
+                document.body.style.backgroundColor = "#ff6363";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "block";
+                document.getElementById("imadulto").style.display = "block";
+                musicaadulto.play();
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+            }
+
+            if (n>= 50 && n<= 65){
+                document.body.style.backgroundColor = "#d6ff63";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "block";
+                document.getElementById("immeia").style.display = "block";
+                musicameia.play();
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+            }
+
+            if (n> 65 && n<= 100){
+                document.body.style.backgroundColor = "#e699ff";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "block";
+                document.getElementById("imidoso").style.display = "block";
+                musicaidoso.play();
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+            }
+
+            if (n>100 && n<=130){
+                document.body.style.backgroundColor = "#6e6969";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "block";
+                document.getElementById("imlendario").style.display = "block";
+                musicalendario.play();
+            
+
+                document.getElementById("imortal").style.display = "none";
+                document.getElementById("imimortal").style.display = "none";
+                musicaimortal.pause();
+                musicaimortal.currentTime = 0;
+
+            }
+               else if (n>130) {
+                document.body.style.backgroundColor = "#357ef2";
+
+                document.getElementById("bebe").style.display = "none";
+                document.getElementById("imbebe").style.display = "none";
+                musicabebe.pause();
+                musicabebe.currentTime = 0;
+
+                document.getElementById("crianca").style.display = "none";
+                document.getElementById("imcrianca").style.display = "none";
+                musicacrianca.pause();
+                musicacrianca.currentTime = 0;
+               
+
+                document.getElementById("adolescente").style.display = "none";
+                document.getElementById("imadolescente").style.display = "none";
+                musicaadolescente.pause();
+                musicaadolescente.currentTime = 0;
+
+                document.getElementById("jovem").style.display = "none";
+                document.getElementById("imjovem").style.display = "none";
+                musicajovem.pause();
+                musicajovem.currentTime = 0;
+
+                document.getElementById("adulto").style.display = "none";
+                document.getElementById("imadulto").style.display = "none";
+                musicaadulto.pause();
+                musicaadulto.currentTime = 0;
+
+                document.getElementById("meia").style.display = "none";
+                document.getElementById("immeia").style.display = "none";
+                musicameia.pause();
+                musicameia.currentTime = 0;
+
+                document.getElementById("idoso").style.display = "none";
+                document.getElementById("imidoso").style.display = "none";
+                musicaidoso.pause();
+                musicaidoso.currentTime = 0;
+
+                document.getElementById("lendario").style.display = "none";
+                document.getElementById("imlendario").style.display = "none";
+                musicalendario.pause();
+                musicalendario.currentTime = 0;
+
+                document.getElementById("imortal").style.display = "block";
+                document.getElementById("imimortal").style.display = "block";
+                musicaimortal.play();
+                }
+            
+        } 
+
+         }
+
+
+     </script>
+</body>
+</html>
